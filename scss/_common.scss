@@ -1,0 +1,40 @@
+html {
+  font-size: 62.5%;
+}
+.card_wrap {
+  width: 100%;    
+  padding: 5rem;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .card-container {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;    
+    .card {      
+      width: 25%;
+      margin: 0 auto;
+      height: 40rem;    
+      padding: 0.5rem;
+      background: #fff url(../images/new.gif) center / cover no-repeat;
+      border: 1px solid #000;
+      border-radius: 0.25rem;
+      transform: translateX(100px);
+      opacity: 0;
+      transition: 150ms;
+      box-sizing: border-box;
+      &.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      // &:nth-child(2n) {
+      //   transform: rotate(90deg);
+      // }
+      &:nth-child(2n) {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
