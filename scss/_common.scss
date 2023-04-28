@@ -13,10 +13,11 @@ html {
     display: flex;
     justify-content:center;
     flex-wrap: wrap;    
+    gap: 2%;
     .card {      
-      width: 25%;
-      margin: 0 auto;
+      width: 32%;
       height: 40rem;    
+      margin-bottom: 2%;
       padding: 0.5rem;
       background: #fff url(../images/new.gif) center / cover no-repeat;
       border: 1px solid #000;
