@@ -16,7 +16,7 @@ html {
     gap: 2%;
     .card {      
       position: relative;
-      width: 23.5%;
+      width: 32%;
       height: 40rem;    
       margin-bottom: 2%;
       padding: 0.5rem;
@@ -24,7 +24,7 @@ html {
       border-radius: 1rem;
       transform: scaleX(1);
       opacity: 0;
-      transition: 150ms;
+      transition: 150ms filter 1.25s;
       box-sizing: border-box;
       animation: vibration .1s infinite;      
       filter: blur(.25rem);
@@ -39,6 +39,7 @@ html {
       &.show {
         transform: scaleX(-1);
         opacity: 1;        
+        filter: blur(0);
       }      
       &:after {
         content: '';
