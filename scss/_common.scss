@@ -15,26 +15,49 @@ html {
     flex-wrap: wrap;    
     gap: 2%;
     .card {      
-      width: 32%;
+      position: relative;
+      width: 23.5%;
       height: 40rem;    
       margin-bottom: 2%;
       padding: 0.5rem;
-      background: #fff url(../images/new.gif) center / cover no-repeat;
-      border: 1px solid #000;
-      border-radius: 0.25rem;
-      transform: translateX(100px);
+      background: #fff url(../images/new.gif) center / cover no-repeat;      
+      border-radius: 1rem;
+      transform: scaleX(1);
       opacity: 0;
       transition: 150ms;
       box-sizing: border-box;
+      animation: vibration .1s infinite;      
+      filter: blur(.25rem);
+      @keyframes vibration {
+        from {
+          transform: rotate(-1deg);
+        }
+        to {
+          transform: rotate(1deg);
+        }
+      }      
       &.show {
-        transform: translateX(0);
-        opacity: 1;
-      }
-      // &:nth-child(2n) {
-      //   transform: rotate(90deg);
-      // }
-      &:nth-child(2n) {
         transform: scaleX(-1);
+        opacity: 1;        
+      }      
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;            
+        opacity: .2;
+      }
+      &:nth-child(2n)::after {           
+        background: green;      
+      }
+      &:nth-child(3n):after {        
+        background: yellow;        
+      }             
+      &:nth-child(5n):after {        
+        background: red;        
       }
     }
   }
